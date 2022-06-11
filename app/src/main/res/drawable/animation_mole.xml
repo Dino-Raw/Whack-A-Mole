@@ -1,0 +1,13 @@
+<animation-list
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:oneshot="true">
+	<item android:drawable="@drawable/mole5_1" android:duration="20" />
+	<item android:drawable="@drawable/mole4_1" android:duration="20" />
+	<item android:drawable="@drawable/mole3_1" android:duration="20" />
+	<item android:drawable="@drawable/mole2_1" android:duration="20" />
+	<item android:drawable="@drawable/mole1_1" android:duration="300" />
+	<item android:drawable="@drawable/mole2_1" android:duration="20" />
+	<item android:drawable="@drawable/mole3_1" android:duration="20" />
+	<item android:drawable="@drawable/mole4_1" android:duration="20" />
+	<item android:drawable="@drawable/mole5_1" android:duration="20" />
+</animation-list>

@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">Whack-A-Mole</string>
+	<string name="rules">Rules</string>
+	<string name="rules_data">You are given 30 seconds.\nYou must strike as many blows at the mole as possible in the allotted time!\nWill you be able to land 60 punches?</string>
+	<string name="record_score">Record score: </string>
+	<string name="current_score">Current score: </string>
+	<string name="zero">0</string>
+</resources>
