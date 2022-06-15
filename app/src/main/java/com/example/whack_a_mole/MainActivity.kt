@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.resetScoreBtn.setOnClickListener {
-            setRecordScore(0)
+            resetRecordScore()
             binding.recordScoreTxt.text = getRecordScore().toString()
         }
 
@@ -52,19 +52,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val builder = MaterialAlertDialogBuilder(this)
-        builder
+        MaterialAlertDialogBuilder(this)
             .setTitle("Quit the game?")
             .setPositiveButton("YES") {_, _ -> this.finishAffinity() }
             .setNegativeButton("NO") {dialog, _-> dialog.dismiss()}
-
-        val customDialog = builder.create()
-        customDialog.show()
+            .create()
+            .show()
     }
 
-    private fun setRecordScore(score: Int) {
+    private fun resetRecordScore() {
         this.getSharedPreferences("score", Context.MODE_PRIVATE)?.edit()
-            ?.putInt("record", score)
+            ?.putInt("record", 0)
             ?.apply()
     }
 

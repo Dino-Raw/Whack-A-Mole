@@ -67,7 +67,10 @@ class GameActivity : AppCompatActivity() {
             mHandler.postDelayed(runnableTime, 1000)
             binding.timeTxt.text = (currentTime--).toString()
             println(currentTime)
-            if (currentTime < 0) finishGame()
+            if (currentTime < 0) {
+                pauseGame()
+                finishGame()
+            }
         }
 
         runnableMole = Runnable {
@@ -91,9 +94,6 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun finishGame() {
-        mHandler.removeCallbacks(runnableTime)
-        mHandler.removeCallbacks(runnableMole)
-
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("score", score)
         startActivity(intent)
@@ -112,17 +112,15 @@ class GameActivity : AppCompatActivity() {
     override fun onBackPressed() {
         pauseGame()
 
-        val builder = MaterialAlertDialogBuilder(this)
-        builder
+        MaterialAlertDialogBuilder(this)
             .setTitle("Finish the game?")
             .setPositiveButton("YES") {_, _ -> finishGame() }
             .setNegativeButton("NO") {dialog, _->
                 dialog.dismiss()
                 resumeGame()
             }
-
-        val customDialog = builder.create()
-        customDialog.show()
+            .create()
+            .show()
     }
 
 }

@@ -70,13 +70,11 @@ class ResultActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val builder = MaterialAlertDialogBuilder(this)
-        builder
+        MaterialAlertDialogBuilder(this)
             .setTitle("Quit the game?")
             .setPositiveButton("YES") {_, _ -> this.finishAffinity() }
             .setNegativeButton("NO") {dialog, _-> dialog.dismiss()}
-
-        val customDialog = builder.create()
-        customDialog.show()
+            .create()
+            .show()
     }
 }
