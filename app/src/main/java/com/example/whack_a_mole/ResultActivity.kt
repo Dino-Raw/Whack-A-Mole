@@ -7,7 +7,6 @@ import android.os.Bundle
 import com.example.whack_a_mole.databinding.ActivityResultBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.lang.NullPointerException
-import kotlin.system.exitProcess
 
 class ResultActivity : AppCompatActivity() {
 
